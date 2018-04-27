@@ -11,8 +11,7 @@ module.exports = {
     nodeth: {
       provider: provider,
       network_id: "*", // any network associated with your node
-      from: "0x7330668e92db36ee3eaeada77a4624956ea3b2ce",
-      gas: 30000000
+      from: "0xeb8eb912ef81a7005fc1d7dd593abd907244e062"
     }
   }
 };

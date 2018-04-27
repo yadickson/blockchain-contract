@@ -9,7 +9,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["truffle", "blockchain"],
+  "keywords": [
+    "truffle",
+    "blockchain"
+  ],
   "author": "Yadickson Soto",
   "license": "GPL-3.0",
   "dependencies": {
