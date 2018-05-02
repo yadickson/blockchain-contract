@@ -5,7 +5,7 @@
   const Owned = artifacts.require('Owned');
 
   contract('Owned', function(accounts) {
-    describe('Initial state', function() {
+    describe('Owner by default', function() {
       let contract;
 
       beforeEach(function() {
@@ -13,14 +13,14 @@
           contract = instance;
         });
       });
-      /*
-            it('Check message render', function() {
-              return contract.renderHelloWorld()
-                .then(function(message) {
-                  assert.equal(message, 'Hello World BaseDos');
-                });
-            });
-      */
+
+      it('Check owner constructor', function() {
+        return contract.getOwner()
+          .then(function(address) {
+            assert.equal(address, accounts[0]);
+          });
+      });
+
     });
 
     describe('Initial await state', function() {
