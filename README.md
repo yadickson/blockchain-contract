@@ -1,4 +1,4 @@
-# blockchain-contracts
+# blockchain-contract
 > Blockchain project to build, test and migrate contracts.
 
 
@@ -45,15 +45,15 @@ npm run clean
 GPL-3.0 © [Yadickson Soto](https://github.com/yadickson)
 
 
-[travis-image]: https://travis-ci.org/yadickson/blockchain-contracts.svg
-[travis-url]: https://travis-ci.org/yadickson/blockchain-contracts
+[travis-image]: https://travis-ci.org/yadickson/blockchain-contract.svg
+[travis-url]: https://travis-ci.org/yadickson/blockchain-contract
 
-[coveralls-image]: https://coveralls.io/repos/github/yadickson/blockchain-contracts/badge.svg
-[coveralls-url]: https://coveralls.io/github/yadickson/blockchain-contracts
+[coveralls-image]: https://coveralls.io/repos/github/yadickson/blockchain-contract/badge.svg
+[coveralls-url]: https://coveralls.io/github/yadickson/blockchain-contract
 
-[dependencies-image]: https://david-dm.org/yadickson/blockchain-contracts/status.svg
-[dependencies-url]: https://david-dm.org/yadickson/blockchain-contracts?view=list
+[dependencies-image]: https://david-dm.org/yadickson/blockchain-contract/status.svg
+[dependencies-url]: https://david-dm.org/yadickson/blockchain-contract?view=list
 
-[dev-dependencies-image]: https://david-dm.org/yadickson/blockchain-contracts/dev-status.svg
-[dev-dependencies-url]: https://david-dm.org/yadickson/blockchain-contracts?type=dev&view=list
+[dev-dependencies-image]: https://david-dm.org/yadickson/blockchain-contract/dev-status.svg
+[dev-dependencies-url]: https://david-dm.org/yadickson/blockchain-contract?type=dev&view=list
 
