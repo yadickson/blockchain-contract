@@ -3,6 +3,7 @@ build/
 dist/
 target/
 coverage/
+coverage.json
 reports/
 package-lock.json
 yarn*

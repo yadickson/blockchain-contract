@@ -1,13 +1,20 @@
 {
   "name": "blockchain-contract",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Blockchain contracts definition",
-  "main": "truffle.js",
+  "main": "truffle-config.js",
   "directories": {
+    "contracts": "contracts",
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "node ./pretest.js",
+    "clean": "./node_modules/.bin/rm -rf build coverage coverage.json",
+    "test": "npm run pretest && npm run lint && ./node_modules/.bin/truffle test || exit 1",
+    "lint": "./node_modules/.bin/solium -d . || exit 1",
+    "coverage": "npm run pretest && npm run lint && ./node_modules/.bin/solidity-coverage || exit 1",
+    "migrate": "./node_modules/.bin/truffle migrate --network",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "keywords": [
     "truffle",
@@ -17,5 +24,19 @@
   "license": "GPL-3.0",
   "dependencies": {
     "web3": "^0.20.6"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.1",
+    "ethereumjs-testrpc": "^6.0.3",
+    "fkill": "^5.3.0",
+    "kill": "0.0.2",
+    "lsof": "^0.1.0",
+    "mocha": "^5.1.1",
+    "rm": "^0.1.8",
+    "solc": "^0.4.23",
+    "solidity-coverage": "^0.5.0",
+    "solium": "^1.1.7",
+    "tree-kill": "^1.2.0",
+    "truffle": "^4.1.7"
   }
 }

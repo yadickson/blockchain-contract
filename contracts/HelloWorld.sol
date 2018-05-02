@@ -1,8 +1,13 @@
-pragma solidity ^0.4.11;
+pragma solidity ^0.4.17;
+
 
 contract HelloWorld {
 
-  function renderHelloWorld () public constant returns (string) {
+  constructor() public {
+
+  }
+
+  function renderHelloWorld() public pure returns(string) {
     return "Hello World BaseDos";
   }
 
