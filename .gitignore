@@ -11,3 +11,5 @@ yarn*
 .karma.conf.js
 .nyc*
 .snyk*
+coverageEnv/
+scTopics

@@ -1,6 +1,6 @@
 module.exports = {
-    norpc: true,
-    copyNodeModules: true
+    norpc: false,
+    copyNodeModules: false,
     skipFiles: [
         'contracts/Migrations.sol'
     ]

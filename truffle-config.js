@@ -8,17 +8,17 @@ module.exports = {
   networks: {
     development: {
       provider: devProvider,
-      network_id: "*" // Match any network id
+      network_id: "*"
     },
     production: {
       provider: prodProvider,
       network_id: "*", // any network associated with your node
       from: "0xeb8eb912ef81a7005fc1d7dd593abd907244e062"
     },
-    coverage: { // Option to use in .solcover.js and kill.js
+    coverage: {
       host: "localhost",
+      port: 8565,
       network_id: "*",
-      port: 8555,
       gas: 0xfffffffffff,
       gasPrice: 0x01
     }

@@ -6,3 +6,9 @@ lsof.rawTcpPort(8555, function(data) {
     return kill(data[0].pid, 9);
   }
 });
+
+lsof.rawTcpPort(8565, function(data) {
+  if (data.length > 0) {
+    return kill(data[0].pid, 9);
+  }
+});
