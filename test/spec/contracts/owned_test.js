@@ -5,6 +5,19 @@
   const Owned = artifacts.require('Owned');
 
   contract('Owned', function(accounts) {
+
+    describe('Deployed state', function() {
+
+      it('Check owner', function() {
+        return Owned.deployed().then(function(instance) {
+          return instance.getOwner();
+        }).then(function(address) {
+          assert.equal(address, accounts[0]);
+        });
+      });
+
+    });
+
     describe('Owner by default', function() {
       let contract;
 
@@ -21,6 +34,12 @@
           });
       });
 
+      it('Check initial mount', function() {
+        return contract.getMount()
+          .then(function(mount) {
+            assert.equal(mount, 0);
+          });
+      });
     });
 
     describe('Initial await state', function() {
@@ -29,23 +48,56 @@
       beforeEach(async function() {
         contract = await Owned.new();
       });
-      /*
-            it('Check message render', async function() {
-              var message = await contract.renderHelloWorld();
-              assert.equal(message, 'Hello World BaseDos');
-            });
-      */
-    });
 
-    describe('Deployed state', function() {
-      /*
-        it('Check message render', function() {
-          return Owned.deployed().then(function(instance) {
-            return instance.renderHelloWorld();
-          }).then(function(message) {
-            assert.equal(message, 'Hello World BaseDos');
-          });
-        });
+      it('Check owner', async function() {
+        var owner = await contract.getOwner();
+        assert.equal(owner, accounts[0]);
+      });
+
+      it('Check initial mount', async function() {
+        var mount = await contract.getMount();
+        assert.equal(mount, 0);
+      });
+
+      it('Check add zero mount', async function() {
+        var mount = await contract.getMount();
+        assert.equal(mount, 0);
+        await contract.addMount(0);
+        assert.equal(mount, 0);
+      });
+
+      it('Check add one mount', async function() {
+        var mount = await contract.getMount();
+        assert.equal(mount, 0);
+        await contract.addMount(1);
+        mount = await contract.getMount();
+        assert.equal(mount, 1);
+      });
+/*
+      it('Check max mount', async function() {
+        var mount = await contract.getMount();
+        var max = 0x7FFFFFFFFFFffffffffffFFFFFFFFFFffffffffffFFFFFFFFFFffffffffffFFF;
+        assert.equal(mount, 0);
+        await contract.addMount(max);
+        mount = await contract.getMount();
+        assert.equal(mount, max);
+      });
+
+      it('Check overload mount', async function() {
+        var mount = await contract.getMount();
+        var max = 0x7FFFFFFFFFFffffffffffFFFFFFFFFFffffffffffFFFFFFFFFFffffffffffFFF;
+        assert.equal(mount, 0);
+        await contract.addMount(1);
+        mount = await contract.getMount();
+        assert.equal(mount, 1);
+
+				console.log("--> 1");
+        contract.addMount(max);
+				console.log("--> 2");
+        mount = await contract.getMount();
+				console.log("--> : " + mount);
+        assert.equal(mount, 1);
+      });
 */
     });
 

@@ -2,11 +2,12 @@
   "name": "blockchain-contract",
   "version": "1.1.0",
   "description": "Blockchain contracts definition",
-  "main": "truffle-config.js",
-  "directories": {
-    "contracts": "contracts",
-    "test": "test"
-  },
+  "main": "index.js",
+  "files": [
+    "contracts",
+    "migrations",
+    "test"
+  ],
   "scripts": {
     "pretest": "node ./pretest.js",
     "clean": "./node_modules/.bin/rm -rf build coverage coverage.json coverageEnv",
@@ -14,12 +15,14 @@
     "lint": "./node_modules/.bin/solium -d . || exit 1",
     "coverage": "npm run pretest && npm run lint && ./node_modules/.bin/solidity-coverage && npm run pretest || exit 1",
     "migrate:dev": "./node_modules/.bin/truffle migrate --network development",
-		"migrate:prod": "./node_modules/.bin/truffle migrate --network production",
+    "migrate:prod": "./node_modules/.bin/truffle migrate --network production",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "keywords": [
     "truffle",
-    "blockchain"
+    "blockchain",
+    "solidity",
+    "coverage"
   ],
   "author": "Yadickson Soto",
   "license": "GPL-3.0",
@@ -29,7 +32,6 @@
   "devDependencies": {
     "coveralls": "^3.0.1",
     "ethereumjs-testrpc": "^6.0.3",
-    "fkill": "^5.3.0",
     "kill": "0.0.2",
     "lsof": "^0.1.0",
     "mocha": "^5.1.1",
