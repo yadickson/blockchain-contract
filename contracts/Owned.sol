@@ -1,7 +1,11 @@
 pragma solidity ^0.4.21;
 
+import "./SafeMathLib.sol";
+
 
 contract Owned {
+
+  using SafeMathLib for uint256;
 
   address private owner;
   uint256 private mount;
@@ -18,8 +22,7 @@ contract Owned {
   }
 
   function addMount(uint256 add) public {
-    require(mount + add >= mount);
-    mount = mount + add;
+    mount = mount.add(add);
   }
 
   function getMount() public onlyOwner view returns(uint256) {
