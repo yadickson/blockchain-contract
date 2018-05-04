@@ -1,9 +1,10 @@
 pragma solidity ^0.4.21;
 
 import "./SafeMathLib.sol";
+import "./Owner.sol";
 
 
-contract Owned {
+contract OwnerImpl is Owner {
 
   using SafeMathLib for uint256;
 

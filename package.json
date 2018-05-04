@@ -9,16 +9,17 @@
     "test"
   ],
   "scripts": {
-    "pretest": "node ./pretest.js",
+    "pretest": "node ./pretest.js || exit 1",
+    "posttest": "node ./pretest.js || exit 1",
     "clean": "./node_modules/.bin/rm -rf build coverage coverage.json coverageEnv",
-    "test": "npm run pretest && npm run lint && ./node_modules/.bin/truffle test && npm run pretest || exit 1",
+    "test": "npm run clean && npm run lint && ./node_modules/.bin/truffle test || exit 1",
     "lint": "./node_modules/.bin/solium -d . || exit 1",
-    "coverage": "npm run pretest && npm run lint && ./node_modules/.bin/solidity-coverage && npm run pretest || exit 1",
-    "migrate:dev": "./node_modules/.bin/truffle migrate --network development",
-    "migrate:prod": "./node_modules/.bin/truffle migrate --network production --from process.env.from",
+    "coverage": "npm run clean && npm run pretest && npm run lint && ./node_modules/.bin/solidity-coverage && npm run pretest || exit 1",
+    "migrate:dev": "npm run clean && ./node_modules/.bin/truffle migrate --network development",
+    "migrate:prod": "npm run clean && ./node_modules/.bin/truffle migrate --network production --from process.env.from",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-    "truffle:test": "./node_modules/.bin/truffle test --network truffle",
-    "truffle:migrate": "./node_modules/.bin/truffle migrate --network truffle",
+    "truffle:test": "npm run clean && ./node_modules/.bin/truffle test --network truffle",
+    "truffle:migrate": "npm run clean && ./node_modules/.bin/truffle migrate --network truffle",
     "truffle:console": "./node_modules/.bin/truffle console --network truffle"    
   },
   "keywords": [

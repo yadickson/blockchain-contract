@@ -2,14 +2,14 @@
 
   'use strict';
 
-  const Owned = artifacts.require('Owned');
+  const Owner = artifacts.require('OwnerImpl');
 
-  contract('Owned', function(accounts) {
+  contract('Owner', function(accounts) {
 
     describe('Deployed state', function() {
 
       it('Check owner', function() {
-        return Owned.deployed().then(function(instance) {
+        return Owner.deployed().then(function(instance) {
           return instance.getOwner();
         }).then(function(address) {
           assert.equal(address, accounts[0]);
@@ -22,7 +22,7 @@
       let contract;
 
       beforeEach(function() {
-        return Owned.new().then(function(instance) {
+        return Owner.new().then(function(instance) {
           contract = instance;
         });
       });
@@ -46,7 +46,7 @@
       let contract;
 
       beforeEach(async function() {
-        contract = await Owned.new();
+        contract = await Owner.new();
       });
 
       it('Check owner', async function() {
