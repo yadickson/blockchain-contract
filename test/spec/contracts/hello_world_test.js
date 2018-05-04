@@ -2,16 +2,16 @@
 
   'use strict';
 
-  const HelloWorld = artifacts.require('HelloWorld');
+  const HelloWorld = artifacts.require('app/HelloWorldImpl');
 
   contract('HelloWorld', function(accounts) {
 
     describe('Deployed state', function() {
       it('Check message render', function() {
         return HelloWorld.deployed().then(function(instance) {
-          return instance.renderHelloWorld();
+          return instance.render();
         }).then(function(message) {
-          assert.equal(message, 'Hello World BaseDos');
+          assert.equal(message, 'Hello World');
         });
       });
 
@@ -27,9 +27,9 @@
       });
 
       it('Check message render', function() {
-        return contract.renderHelloWorld()
+        return contract.render()
           .then(function(message) {
-            assert.equal(message, 'Hello World BaseDos');
+            assert.equal(message, 'Hello World');
           });
       });
 
@@ -43,8 +43,13 @@
       });
 
       it('Check message render', async function() {
-        var message = await contract.renderHelloWorld();
-        assert.equal(message, 'Hello World BaseDos');
+        var message = await contract.render();
+        assert.equal(message, 'Hello World');
+      });
+
+      it('Check message greeting', async function() {
+        var message = await contract.greeting("BaseDos");
+        assert.equal(message, 'Hello World: BaseDos');
       });
 
     });

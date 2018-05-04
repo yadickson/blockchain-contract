@@ -9,7 +9,7 @@
     "test"
   ],
   "scripts": {
-    "kill": "node ./pretest.js || exit 1",
+    "kill": "node ./kill.js || exit 1",
     "clean": "./node_modules/.bin/rm -rf build coverage coverage.json coverageEnv",
     "test": "npm run clean && npm run lint && ./node_modules/.bin/truffle test --network development || exit 1",
     "lint": "./node_modules/.bin/solium -d . || exit 1",

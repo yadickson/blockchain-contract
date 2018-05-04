@@ -2,7 +2,7 @@
 
   'use strict';
 
-  const SafeMathLib = artifacts.require('SafeMathLib');
+  const SafeMathLib = artifacts.require('libs/SafeMathLib');
 
   contract('SafeMathLib', function(accounts) {
 

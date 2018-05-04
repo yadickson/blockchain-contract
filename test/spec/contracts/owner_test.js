@@ -2,7 +2,7 @@
 
   'use strict';
 
-  const Owner = artifacts.require('OwnerImpl');
+  const Owner = artifacts.require('app/OwnerImpl');
 
   contract('Owner', function(accounts) {
 
