@@ -24,7 +24,7 @@
           library = instance;
         });
       });
-
+/*
       it('Check mult', async function() {
         return library.mult(3,2)
           .then(function(result) {
@@ -45,7 +45,7 @@
             assert.equal(result, 1);
           });
       });
-
+*/
     });
 
   });

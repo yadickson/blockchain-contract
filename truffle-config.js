@@ -1,7 +1,7 @@
 const Web3 = require('web3');
-const testRPC = require("ethereumjs-testrpc");
+const ganache = require("ganache-cli");
 
-const devProvider = testRPC.provider({port: 8565});
+const devProvider = ganache.provider({port: 8555});
 const prodProvider = new Web3.providers.HttpProvider("http://localhost:8545");
 
 module.exports = {
