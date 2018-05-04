@@ -15,8 +15,11 @@
     "lint": "./node_modules/.bin/solium -d . || exit 1",
     "coverage": "npm run pretest && npm run lint && ./node_modules/.bin/solidity-coverage && npm run pretest || exit 1",
     "migrate:dev": "./node_modules/.bin/truffle migrate --network development",
-    "migrate:prod": "./node_modules/.bin/truffle migrate --network production",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "migrate:prod": "./node_modules/.bin/truffle migrate --network production --from process.env.from",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "truffle:test": "./node_modules/.bin/truffle test --network truffle",
+    "truffle:migrate": "./node_modules/.bin/truffle migrate --network truffle",
+    "truffle:console": "./node_modules/.bin/truffle console --network truffle"    
   },
   "keywords": [
     "truffle",
