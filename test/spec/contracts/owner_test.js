@@ -73,7 +73,7 @@
         mount = await contract.getMount();
         assert.equal(mount, 1);
       });
-/*
+
       it('Check max mount', async function() {
         var mount = await contract.getMount();
         var max = 0x7FFFFFFFFFFffffffffffFFFFFFFFFFffffffffffFFFFFFFFFFffffffffffFFF;
@@ -82,7 +82,7 @@
         mount = await contract.getMount();
         assert.equal(mount, max);
       });
-
+/*
       it('Check overload mount', async function() {
         var mount = await contract.getMount();
         var max = 0x7FFFFFFFFFFffffffffffFFFFFFFFFFffffffffffFFFFFFFFFFffffffffffFFF;
