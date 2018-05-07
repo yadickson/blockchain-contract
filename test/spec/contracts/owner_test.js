@@ -2,7 +2,7 @@
 
   'use strict';
 
-  const Owner = artifacts.require('app/OwnerImpl');
+  const Owner = artifacts.require('OwnerImpl');
 
   contract('Owner', function(accounts) {
 
@@ -39,6 +39,26 @@
           .then(function(mount) {
             assert.equal(mount, 0);
           });
+      });
+    });
+
+    describe('Owner by default', function() {
+      let contract;
+
+      beforeEach(async function() {
+        contract = await Owner.new({
+          from: accounts[1]
+        });
+      });
+
+      it('Check add mount error', async function() {
+        try {
+          await contract.addMount(1);
+          assert.fail();
+        } catch (error) {
+          let mount = await contract.getMount();
+          assert.equal(mount, 0);
+        }
       });
     });
 
@@ -82,23 +102,7 @@
         mount = await contract.getMount();
         assert.equal(mount, max);
       });
-/*
-      it('Check overload mount', async function() {
-        var mount = await contract.getMount();
-        var max = 0x7FFFFFFFFFFffffffffffFFFFFFFFFFffffffffffFFFFFFFFFFffffffffffFFF;
-        assert.equal(mount, 0);
-        await contract.addMount(1);
-        mount = await contract.getMount();
-        assert.equal(mount, 1);
 
-				console.log("--> 1");
-        contract.addMount(max);
-				console.log("--> 2");
-        mount = await contract.getMount();
-				console.log("--> : " + mount);
-        assert.equal(mount, 1);
-      });
-*/
     });
 
   });
