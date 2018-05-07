@@ -31,7 +31,7 @@ npm run coverage
 ## Migrate
 
 ```bash
-npm run migrate [network]
+npm run migrate <from 0x... account>
 ```
 
 ## Clean
