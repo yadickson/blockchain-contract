@@ -1,6 +1,6 @@
-var SafeMathLib = artifacts.require("./libs/SafeMathLib.sol");
-var StringLib = artifacts.require("./libs/StringLib.sol");
-var HelloWorld = artifacts.require("./app/HelloWorldImpl.sol");
+var SafeMathLib = artifacts.require("../libraries/SafeMathLib.sol");
+var StringLib = artifacts.require("../libraries/StringLib.sol");
+var HelloWorld = artifacts.require("./app/HelloWorld.sol");
 var Owner = artifacts.require("./app/OwnerImpl.sol");
 
 module.exports = function(deployer) {

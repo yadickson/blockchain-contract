@@ -2,7 +2,7 @@
 
   'use strict';
 
-  const HelloWorld = artifacts.require('app/HelloWorldImpl');
+  const HelloWorld = artifacts.require('app/HelloWorld');
 
   contract('HelloWorld', function(accounts) {
 

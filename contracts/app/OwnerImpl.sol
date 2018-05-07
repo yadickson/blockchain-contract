@@ -1,6 +1,6 @@
 pragma solidity ^0.4.21;
 
-import "../libs/SafeMathLib.sol";
+import "../../libraries/SafeMathLib.sol";
 import "../interface/Owner.sol";
 
 

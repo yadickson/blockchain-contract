@@ -1,10 +1,9 @@
 pragma solidity ^0.4.21;
 
-import "../libs/StringLib.sol";
-import "../interface/HelloWorld.sol";
+import "../../libraries/StringLib.sol";
 
 
-contract HelloWorldImpl is HelloWorld {
+contract HelloWorld {
 
   using StringLib for string;
   string constant MESSAGE = "Hello World";
@@ -18,8 +17,9 @@ contract HelloWorldImpl is HelloWorld {
     return MESSAGE;
   }
 
-  function greeting(string _who) public view returns(string) {
-    return MESSAGE.concat(SEPARATOR).concat(_who);
+  function greeting(string _who) public pure returns(string) {
+    string memory result = MESSAGE.concat(SEPARATOR);
+    return result.concat(_who);
   }
 
 }
