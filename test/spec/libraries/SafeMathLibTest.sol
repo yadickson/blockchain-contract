@@ -1,7 +1,7 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.23;
 
 import "truffle/Assert.sol";
-import { SafeMathLib } from "../../../libraries/SafeMathLib.sol";
+import "../../../libraries/SafeMathLib.sol";
 
 
 contract SafeMathLibTest {

@@ -42,7 +42,7 @@
       });
     });
 
-    describe('Owner by default', function() {
+    describe('Set Owner by default', function() {
       let contract;
 
       beforeEach(async function() {

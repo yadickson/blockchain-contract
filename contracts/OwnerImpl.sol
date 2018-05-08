@@ -1,7 +1,7 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.23;
 
-import "../libraries/SafeMathLib.sol";
 import "./Owner.sol";
+import "../libraries/SafeMathLib.sol";
 
 
 contract OwnerImpl is Owner {
@@ -22,8 +22,8 @@ contract OwnerImpl is Owner {
     _;
   }
 
-  function addMount(uint256 add) public onlyOwner {
-    mount = mount.add(add);
+  function addMount(uint256 _add) public onlyOwner {
+    mount = mount.add(_add);
   }
 
   function getMount() public view returns(uint256) {
@@ -34,5 +34,5 @@ contract OwnerImpl is Owner {
     return owner;
   }
 
-  event PrintAddress(address add);
+  event PrintAddress(address _add);
 }

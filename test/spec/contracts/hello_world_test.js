@@ -2,7 +2,7 @@
 
   'use strict';
 
-  const HelloWorld = artifacts.require('HelloWorld');
+  const HelloWorld = artifacts.require('HelloWorldImpl');
 
   contract('HelloWorld', function(accounts) {
 
@@ -45,11 +45,6 @@
       it('Check message render', async function() {
         var message = await contract.render();
         assert.equal(message, 'Hello World');
-      });
-
-      it('Check message greeting', async function() {
-        var message = await contract.greeting("BaseDos");
-        assert.equal(message, 'Hello World: BaseDos');
       });
 
     });
